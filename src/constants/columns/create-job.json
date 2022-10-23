@@ -1,0 +1,24 @@
+[
+  {
+    "title": "title",
+    "showTitle": "عنوان شغل",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "createDate",
+    "showTitle": "تاریخ ایجاد",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  }
+]

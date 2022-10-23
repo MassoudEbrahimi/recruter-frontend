@@ -1,0 +1,39 @@
+@import "../../../../css/variable.scss";
+
+.interviewee-status-wrapper {
+  @include DisplayFlex();
+  flex-direction: column;
+
+  & > section {
+    @include DisplayFlex();
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 55px;
+    margin: 5px 10px;
+    padding: 5px 25px;
+    & > div{
+    @include DisplayFlex();
+      justify-content: center;
+      text-align: right;
+      align-items: center;
+      border-radius: 10px;
+  }
+    & .title {
+      width: 88%;
+      height: 100%;
+      border : 1px solid transparent;
+      align-self: flex-start;
+      border-radius: 10px;
+      padding: 8px 20px;
+      justify-content: flex-start;
+    }
+
+    & .counter-index {
+      width: 10%;
+      height: 100%;
+      border: 1px solid transparent;
+      border-radius: 50%;
+    }
+  }
+}

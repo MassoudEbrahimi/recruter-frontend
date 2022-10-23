@@ -1,0 +1,40 @@
+.calendarContainer {
+  width: 350px;
+  padding: 12px;
+  font-size: 12px;
+}
+.calendarContainer .selected button,
+.calendarContainer .selected button:active,
+.calendarContainer .selected button:focus,
+.calendarContainer .selected button:hover :not([disabled]) {
+  background-color: var(--Basic) !important;
+  color: #fff;
+}
+.calendarContainer .dayWrapper button {
+  width: 30px;
+  height: 30px;
+}
+.calendarButton {
+  background-color: var(--Basic) !important;
+  color: var(--White) !important;
+  transition: all 0.5s linear;
+}
+.calendarButton:hover {
+  background-color: var(--BasicHover) !important;
+  color: var(--White) !important;
+}
+.rc-time-picker-panel-select ul::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--White) !important;
+}
+.rc-time-picker-panel-select ul::-webkit-scrollbar-thumb {
+  background-color: var(--Basic) !important;
+}
+.date-timePicker-label {
+  position: absolute;
+  direction: rtl;
+  right: 15px;
+  top: -10px;
+  font-size: 12px;
+  background: var(--White) !important;
+}

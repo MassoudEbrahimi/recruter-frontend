@@ -1,0 +1,38 @@
+[
+  {"title" :  "username","showTitle": "نام کاربری",
+    "type": "",
+    "filtering" : false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {"title" :  "melliCode","showTitle": "کد ملی",
+    "type": "",
+    "filtering" : false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {"title" :  "email","showTitle": "پست الکترونیکی",
+    "type": "",
+    "filtering" : false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {"title" :  "phoneNumber","showTitle": "شماره همراه",
+    "type": "",
+    "filtering" : false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  }
+]

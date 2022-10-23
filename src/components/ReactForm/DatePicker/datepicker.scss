@@ -1,0 +1,40 @@
+
+.multi-calendar-date-picker{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  & .dial-lines{
+    transform-origin: 50% 60px !important;
+  }
+}
+
+//.rmdp-analog-clock .dial-lines {
+//  transform-origin: 50% 60px;
+//}
+.calendar-time-picker{
+
+}
+.rmdp-container {
+  display: block !important;
+  & > input {
+    padding-left: unset;
+    padding-right: 16px;
+    text-align: right;
+    direction: rtl;
+    background-image: none;
+    padding-top: 0.3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    height: 44px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    color: var(--text-color);
+    background: var(--bg-color) no-repeat;
+    background-size: 0 1px, 100% 1px;
+    background-position: 50% 100%, 50% 100%;
+    transition: background-size 0.4s cubic-bezier(0.64, 0.09, 0.08, 1);
+  }
+}

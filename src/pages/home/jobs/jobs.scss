@@ -1,0 +1,66 @@
+@import "../../../css/variable.scss";
+
+.jobs-container {
+    width: 100%;
+    height: 527px;
+    overflow: hidden;
+    & .jobs-container-inner {
+        @include  DisplayFlex();
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height:100%;
+        padding: 10px;
+        position: relative;
+        & article.jobs-list {
+            @include DisplayFlex();
+            width: 80%;
+            height: 280px;
+            overflow-x: auto;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            & .swiper {
+                width: 100%;
+                height: 100%;
+                border-radius: var(--radius);
+            }
+            & .swiper-slide {
+                @include DisplayFlex();
+                width: 300px !important; //responsive remove this
+                height: 220px;
+                text-align: center;
+                font-size: 18px;
+                background-color: var(--bg-color);
+                /* Center slide text vertically */
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                border-radius: 10px;
+            }
+            & .swiper-pagination-bullet-active {
+                background-color: var(--primary-color) !important;
+            }
+        }
+
+    }
+}
+body[data-theme="dark"]{
+    .swiper-pagination-bullet{
+        background-color: var(--text-color) !important;
+    }
+}
+
+a.more-items{
+    @include Button();
+    position: absolute;
+    padding: 8px 25px;
+    bottom: 10%;
+    left: 10%;
+}

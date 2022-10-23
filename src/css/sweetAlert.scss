@@ -1,0 +1,41 @@
+@import "./variable.scss";
+
+.swal.confirm_button,
+.swal.cancel_button {
+  margin: 3px 8px;
+}
+.swal-container{
+  //background-color: var(--bg-color);
+  color: var(--text-color);
+  & .swal2-popup{
+    background:var(--bg-color);
+    color: var(--text-color);
+  }
+}
+.swal.confirm_button {
+  @include Button();
+  padding: 8px 25px;
+  background-color: var(--success-color);
+}
+
+.swal.cancel_button {
+  @include Button();
+  padding: 8px 25px;
+  background-color: var(--error-color);
+}
+.swal.title {
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.swal.error_icon {
+  font-size: 12px;
+  margin: 15px auto;
+  color: var(--error-color);
+  background-color: var(--bg-color);
+}
+
+.swal.action {
+  margin: 15px 0 10px 0;
+  padding: 0;
+}

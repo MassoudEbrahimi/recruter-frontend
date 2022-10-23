@@ -1,0 +1,62 @@
+/// this is sample description
+/// @type Number
+/// @aceess private
+$label-size :11px;
+///
+$label-color : var(--text-color);
+///
+$text-size :13px;
+///
+$text-color : var(--text-color);
+///
+$tag-size: 0.8;
+
+/* Spaces */
+///
+$space-around : 30px; 
+
+/* Colors */ 
+///
+$danger-color : var(--error-color);
+///
+$success-color : var(--success-color);
+///
+$warning-color : #FF9800;
+///
+$info-color : var(--info-color);
+///
+$default-color : var(--bg-color);
+///
+$danger-gradient-color : #d50000;
+///
+$success-gradient-color : #388E3C;
+///
+$warning-gradient-color : #FF5722;
+///
+$info-gradient-color : #0e4d96;
+///
+$disabled-color : #ddd;
+///
+$focus-color : var(--secondary-bg-color); //var(--Basic); //Todo checked
+///
+$border-color :var(--border-color) ;
+///
+$light-focus-color : #145af973;
+///
+$gradient-color : #0a3d79;
+
+
+
+/* Input */
+///
+$input-height:28px;
+/*Its better never changes this any thing is not working good*/
+
+/* Tag */
+///
+$tag-bg-color : #F9FAFB;
+///
+$tag-text-color : rgba(0,0,0,0.6);
+ 
+// e4e4e4
+// F9FAFB

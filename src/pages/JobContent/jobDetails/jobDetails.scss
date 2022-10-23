@@ -1,0 +1,224 @@
+@import "../../../css/variable";
+
+.job-details-wrapper {
+  @include DisplayFlex();
+  width: 100%;
+  height: 100%;
+
+  &.active {
+    .job-detail {
+      width: 55%;
+
+      & button.apply-job {
+        left: -55px;
+      }
+      & button.redirect-app {
+        left: 30px;
+      }
+    }
+
+    //.job-forms-apply {
+    //  width: 40%;
+    //}
+
+    .vertical {
+      width: 2px;
+    }
+  }
+
+  & .job-detail,
+  & .job-forms-apply,
+  & .vertical {
+    transition: all 0.5s linear;
+  }
+
+  .job-detail {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    & button.apply-job,
+    & button.redirect-app{
+      @include Button();
+      border: 1px solid var(--border-color);
+      position: absolute;
+      font-size: .8rem;
+      box-shadow: none;
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+    & button.apply-job{
+      left: -55px;
+      top: 60px;
+      transform: rotate(-90deg);
+    }
+    & button.redirect-app{
+      top: 80px;
+      left: 40px;
+
+    }
+
+    & .job-detail-description {
+      width: 100%;
+      height: 100%;
+      padding: 15px 25px;
+
+      .title {
+        text-align: right;
+        font-size: 1.2rem;
+        padding: 10px 25px;
+        position: static;
+        z-index: 2;
+        top: 0;
+        background-color: var(--btn-bg-color);
+        color: var(--second-text-color);
+        border-radius: var(--radius);
+        box-shadow: 0 2px 5px 1px var(--text-color);
+      }
+
+      & .description {
+        width: 100%;
+        height: calc(100% - 50px);
+        padding: 15px 25px;
+        overflow: hidden auto;
+        position: relative;
+        z-index: 1;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+
+        & h4 {
+          padding: 4px;
+          text-align: right;
+          font-size: 1.2rem;
+        }
+
+        & div {
+          padding: 10px;
+        }
+
+        & .grouping-job {
+          & ul {
+            @include DisplayFlex();
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            & li {
+              //margin-left: 5px;
+              margin-bottom: 15px;
+              width: 50%;
+              color: var(--text-color);
+            }
+          }
+
+          & p {
+            &:first-child {
+              font-size: 0.8rem;
+              margin-bottom: 5px;
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+
+            &:last-child {
+              display: inline-block;
+              padding: 8px 15px;
+              font-size: 0.8rem;
+              border-radius: var(--radius);
+              background-color: var(--btn-bg-color);
+              color: var(--second-text-color);
+              white-space: nowrap;
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        & .all-job-ability {
+          & ul {
+            & li {
+              list-style: square;
+              font-size: 14px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.job-forms-apply {
+  width: 0;
+  padding: 10px 15px;
+  transition: all 0.5s linear;
+  -webkit-animation: OpenApplyForm 0.5s linear;
+  -o-animation: OpenApplyForm 0.5s linear;
+  animation: OpenApplyForm 0.5s linear;
+  overflow: hidden auto;
+  &::-webkit-scrollbar{
+    background-color: var(--secondary-bg-color);
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+  }
+  &.active {
+    width: 45%;
+  }
+  & .forms{
+    @include DisplayFlex();
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    & .model-item {
+      width: 45%;
+    }
+
+  }
+
+  & .r-input {
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+  }
+
+  & > button {
+    @include Button();
+    box-shadow: none;
+    padding: 8px 15px;
+
+    &:last-child {
+      background-color: var(--success-color);
+      color: #fff;
+    }
+  }
+}
+
+.vertical {
+  width: 0;
+  height: 90%;
+  margin-top: 5%;
+  border-radius: 3px;
+  background-color: var(--secondary-bg-color);
+}
+
+@keyframes OpenApplyForm {
+  0% {
+    opacity: 0;
+    width: 0;
+    visibility: hidden;
+    display: none;
+  }
+  50% {
+    opacity: 0.5;
+    width: 20%;
+    visibility: visible;
+    display: block;
+  }
+  100% {
+    opacity: 1;
+    width: 40%;
+    visibility: visible;
+  }
+
+}

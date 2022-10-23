@@ -1,0 +1,114 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*********************
+* Modal
+**********************/
+@import "../../css/variable.scss";
+
+.r-modal .r-modal-wrapper {
+  animation-name: bounce;
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+.r-modal-assign .r-modal-assign-wrapper,
+.r-modal-dash .r-modal-wrapper {
+  animation-name: bounce;
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+.r-modal-dash .r-modal-wrapper {
+  animation: minimise 1000ms linear;
+  -webkit-animation: minimise 1000ms linear;
+  -moz-animation: minimise 1000ms linear;
+}
+.r-modal-assign .r-modal-assign-wrapper,
+.r-modal-dash .r-modal-wrapper {
+  animation-name: bounce;
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+
+.r-modal-content::-webkit-scrollbar {
+  width: 5px;
+  background: var(--seocndary-bg-color);
+}
+
+.r-modal-content::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+@-webkit-keyframes minimise {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+  }
+}
+@keyframes minimise {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+    transform: scale3d(0.1, 0.1, 1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+    transform: scale3d(0.1, 0.1, 1);
+    -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  }
+  55% {
+    -webkit-transform: scale3d(1.08, 1.08, 1);
+    transform: scale3d(1.08, 1.08, 1);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 0.95, 1);
+            transform: scale3d(0.95, 0.95, 1);
+       -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+    -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  }
+  55% {
+    -webkit-transform: scale3d(1.08, 1.08, 1);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 0.95, 1);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  }
+}
+
+
+

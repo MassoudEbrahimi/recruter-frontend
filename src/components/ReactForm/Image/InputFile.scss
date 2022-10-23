@@ -1,0 +1,52 @@
+@import "../../../css/variable.scss";
+
+.input-file-container {
+  width: 100%;
+  height: 250px;
+  border: 1px solid #9e9e9e;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+
+  & .action-button {
+    width: 100%;
+    height: 35px;
+    display: flex;
+
+    & .label-upload-img,
+    & .label-remove-img {
+      @include Button;
+      width: 50%;
+      height: 100%;
+      box-shadow: none;
+    }
+
+    & .label-upload-img {
+      border-radius: 0 3px 0 0;
+    }
+
+    & .label-remove-img {
+      border-radius: 3px 0 0 0;
+    }
+  }
+
+  & button {
+    @include Button;
+    box-shadow: none;
+
+    & span {
+      font-family: inherit;
+    }
+  }
+
+  & figure.image-box {
+    width: 100%;
+    height: calc(100% - 35px);
+    margin: 0;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+

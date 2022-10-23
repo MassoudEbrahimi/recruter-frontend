@@ -1,0 +1,77 @@
+[
+  {
+    "title": "fullName",
+    "showTitle": "نام و نام خانوادگی",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "melliCode",
+    "showTitle": "کدملی",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },{
+  "title": "job",
+  "showTitle": "عنوان شغلی",
+  "type": "",
+  "filtering": false,
+  "sorting": false,
+  "sort": {
+    "show": false,
+    "desc": false
+  }
+},
+  {
+    "title": "date",
+    "showTitle": "تاریخ مصاحبه",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "time",
+    "showTitle": "زمان مصاحبه",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "phone",
+    "showTitle": "شماره همراه",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },{
+  "title": "resume",
+  "showTitle": "فایل رزومه",
+  "type": "",
+  "filtering": false,
+  "sorting": false,
+  "sort": {
+    "show": false,
+    "desc": false
+  }
+}
+]

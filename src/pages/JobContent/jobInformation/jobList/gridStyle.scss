@@ -1,0 +1,80 @@
+@import "../../../../css/variable.scss";
+
+.grib-job-style {
+  width: 100%;
+  height: 100%;
+  overflow: hidden auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > ul {
+    @include DisplayFlex();
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    & .job-item {
+      flex-basis: 32%;
+      margin: 2px;
+      height: 250px;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+      padding: 5px 10px;
+      transition: border 0.3s linear;
+      color: var(--text-color);
+      cursor: pointer;
+      &:nth-child(2n) {
+        background-color: var(--bg-color);
+      }
+
+      &:nth-child(2n+1) {
+        background-color: var(--secondary-bg-color);
+      }
+      &:hover{
+        border-right: 3px solid var(--primary-color);
+      }
+    }
+
+    & .job-post {
+      width: 100%;
+      position: relative;
+      height: 100%;
+      & > div {
+        & .post-top {
+          @include DisplayFlex();
+          justify-content: space-between;
+          align-items: center;
+
+          & svg {
+            flex-basis: 20%;
+          }
+
+          & h4 {
+            text-align: center;
+            flex-basis: 80%;
+            font-size: 100%;
+          }
+        }
+      }
+      & > div:last-child{
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+      }
+    }
+
+    & .post-info {
+      & ul {
+        & li {
+          padding: 5px 8px;
+          font-size:14px
+        }
+      }
+
+    }
+  }
+
+}

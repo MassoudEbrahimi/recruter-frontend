@@ -1,0 +1,65 @@
+@import "../../css/variable";
+.login-container{
+  max-width: 100%;
+  height: 100vh;
+  direction: rtl;
+  text-align: center;
+  overflow: hidden;
+  & > img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+  }
+  & > div{
+    @include DisplayFlex();
+    background-color: var(--bg-color);
+    justify-content: space-between;
+    max-width: 900px;
+    height: 400px;
+    margin: 100px auto 0 auto;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    & .login-img{
+      width: 40%;
+      height: 100%;
+      & img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .login-form{
+
+      width: 60%;
+      height: 100%;
+      & h3{
+        font-size: 1rem;
+        margin-top: 20px;
+      }
+      & .form-container{
+        @include DisplayFlex();
+        flex-direction: column;
+        padding: 10px 25px;
+        width: 80%;
+        margin: 30px auto 0 auto;
+      }
+      & button{
+        @include Button();
+        padding: 10px 25px;
+        font-size: 0.8rem;
+        margin: 0 5px;
+        &:first-child{
+          background-color: var(--success-color) !important;
+        }
+        &:last-child{
+          background-color: var(--info-color);
+        }
+      }
+    }
+  }
+}
+

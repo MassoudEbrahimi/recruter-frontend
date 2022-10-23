@@ -1,0 +1,46 @@
+.main-content{
+    width: 100%;
+    height: calc(100vh - 110px);
+    background-color: var(--bg-color);
+    margin-top: 80px;
+    //overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    & .main-content-inner{
+        width: 100%;
+        height: 100%;
+        & .homepage-image{
+            background : url("../../assets/home-image.png") center no-repeat fixed;
+            background-size: contain;
+            width: 100%;
+            height: 300px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.75);
+        }
+    }
+}
+
+//*********** ProgressBar *************//
+.progress-bar-header {
+    position: fixed;
+    direction: ltr;
+    top: auto;
+    z-index: 20;
+    width: 100%;
+    background-color: var(--secondary-bg-color);
+}
+
+.progress-container {
+    width: 100%;
+    height: 5px;
+}
+
+.progress-bar {
+    height: 5px;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 0.3s ease;
+
+}

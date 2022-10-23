@@ -1,0 +1,158 @@
+@import "../../../../css/variable.scss";
+
+.interview-profile-wrapper {
+  width: 50%;
+  height: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+
+
+  & .profile-tab-bar {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+
+    & .connecting-line {
+      height: 2px;
+      background: #e0e0e0;
+      position: absolute;
+      width: 75%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: 35px;
+      z-index: 1;
+    }
+
+    & ul {
+      @include DisplayFlex();
+      position: relative;
+      margin-bottom: 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      list-style: none;
+
+      & > li {
+        width: 25%;
+
+        &:after {
+          content: " ";
+          position: absolute;
+          right: 46%;
+          opacity: 0;
+          margin: 0 auto;
+          bottom: 0;
+          border: 5px solid transparent;
+          border-bottom-color: red;
+          transition: 0.1s ease-in-out;
+        }
+
+        &.active {
+          & span.round-tab {
+            background-color: var(--primary-color);
+            color: #fff;
+          }
+        }
+
+        & a {
+          width: 30px;
+          height: 30px;
+          margin: 20px auto;
+          border-radius: 100%;
+          padding: 0;
+          background-color: transparent;
+          position: relative;
+          top: 10px;
+
+          & span.round-tab {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            border-radius: 50%;
+            background: var(--bg-color);
+            z-index: 2;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            font-size: 16px;
+            color: var(--text-color);
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.5s ease;
+
+            &.active {
+              background-color: var(--primary-color);
+              color: #fff;
+            }
+          }
+
+          & i {
+            position: absolute;
+            top: -15px;
+            font-style: normal;
+            font-weight: 400;
+            white-space: nowrap;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  & .form-profile {
+    width: 80%;
+    height: calc(100% - 130px);
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden auto;
+    border: 1px solid var(--border-color);
+  }
+
+  & .footer-profile {
+    @include DisplayFlex();
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 25px;
+
+    & button {
+      @include Button();
+      margin: 0 5px;
+      padding:10px 20px ;
+    }
+
+  }
+
+  & .step-form-container {
+    @include DisplayFlex();
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    width: 100%;
+    height: 100%;
+
+    & .model-item {
+      width: 48%;
+    }
+
+    & .r-input {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  }
+}

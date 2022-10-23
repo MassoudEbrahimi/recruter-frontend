@@ -1,0 +1,57 @@
+[
+  {
+    "title": "year",
+    "showTitle": "سال",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "month",
+    "showTitle": "ماه",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "totalInterview",
+    "showTitle": "تعداد",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "totalAccepted",
+    "showTitle": "پذیرفته شده",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "totalRejected",
+    "showTitle": "مردود شده",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  }
+]

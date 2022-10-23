@@ -1,0 +1,114 @@
+@import "../../css/variable";
+
+.jobs-content-container {
+  @include DisplayFlex();
+  width: 100%;
+  height: 100%;
+
+  &.active{
+    & .jobs-sidebar{
+      width: 400px;
+      & .icon-menu{
+        right: 400px;
+      }
+    }
+    & .jobs-container{
+      margin-right: 400px;
+      width: calc(100% - 400px);
+    }
+
+  }
+  & .jobs-sidebar {
+    width: 0;
+    height: calc(100% - 110px);
+    position: fixed;
+    background-color: var(--secondary-bg-color);
+    transition: width 0.7s linear;
+    .icon-menu{
+      @include Button();
+      position: absolute;
+      top: 10px;
+      right: -8px;
+      box-shadow: none;
+      border-radius: 5px 0 0 5px;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 8px;
+      transition: all 0.7s linear;
+    }
+    .sidebar-inner{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      & .r-input{
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      & section:last-child{
+        & button{
+          @include Button();
+          padding: 8px 15px;
+          &:first-child{
+            background-color: var(--success-color);
+          }
+          &:last-child{
+            background-color: var(--error-color);
+          }
+        }
+      }
+    }
+  }
+  & .jobs-container{
+    @include DisplayFlex();
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s linear;
+    align-items: center;
+    & .jobs-inner{
+      width: 60%;
+      height: 90%;
+      margin: 0 auto;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+    }
+  }
+}
+
+
+@media only screen and (max-width:321px) {
+  .jobs-content-container {
+    &.active {
+      & .jobs-sidebar {
+        width: 100%;
+        z-index: 5;
+      }
+    }
+  }
+}
+@media only screen and (min-width : 321px) and (max-width: 768px){
+  .jobs-content-container{
+    &.active{
+      & .jobs-sidebar{
+        width: 100%;
+        z-index: 5;
+        & .icon-menu{
+          right: 0;
+          top: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .jobs-content-container{
+    &.active{
+      & .jobs-sidebar{
+        width: 300px;
+        & .icon-menu{
+          right: 300px;
+        }
+      }
+    }
+  }
+}

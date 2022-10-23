@@ -1,0 +1,275 @@
+@import "../../../../css/variable.scss";
+
+.interview-assignment-container {
+  direction: rtl;
+  width: 100%;
+  height: 100%;
+}
+
+.year-title {
+  @include DisplayFlex();
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+
+  & section.arrow,
+  & section.title {
+    @include DisplayFlex();
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bg-color);
+    color: var(--second-text-color);
+    border: 1px solid transparent;
+  }
+
+  & section.arrow {
+    width: 5%;
+    height: 100%;
+    cursor: pointer;
+
+    &:first-child {
+      border-radius: 0 10px 10px 0;
+      border-left: 1px solid var(--bg-color);
+    }
+
+    &:last-child {
+      border-radius: 10px 0 0 10px;
+      border-right: 1px solid var(--bg-color);
+    }
+
+    &:hover {
+      background-color: var(--second-text-color);
+      color: var(--secondary-bg-color);
+    }
+  }
+
+  & section.title {
+    width: 90%;
+    height: 100%;
+    font-size: 1.2rem;
+  }
+}
+
+div.calendar-type-list {
+  @include DisplayFlex();
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+
+  & > section {
+    background-color: var(--primary-color);
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 5px;
+    height: 100%;
+  }
+
+  & > section.time-changer {
+    @include DisplayFlex();
+
+    & button {
+      @include Button();
+      padding: 5px 20px;
+      box-shadow: none;
+      white-space: nowrap;
+      border-radius: 0;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        border-left: 1px dashed var(--bg-color);
+      }
+    }
+  }
+
+  & > button {
+    @include Button();
+    box-shadow: none;
+    border: 1px solid transparent;
+    border-radius: 50%;
+  }
+}
+
+div.days-of-month,
+div.week-day {
+  @include DisplayFlex();
+  width: 90%;
+  margin: 0 auto;
+
+  & > section {
+    width: 14.28%;
+    padding: 10px 15px;
+    text-align: center;
+  }
+}
+
+div.week-day {
+  background-color: var(--primary-color);
+  color: #fff;
+
+  &:last-child {
+    border-radius: var(--radius) 0 0 0;
+  }
+
+  &:first-child {
+    border-radius: 0 var(--radius) 0 0;
+  }
+}
+
+div.days-of-month {
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-height: calc(100% - 160px);
+  //overflow: auto auto;
+  position: relative;
+  z-index: 1;
+
+  & > section {
+    position: relative;
+    height: 100px;
+    padding: 8px 10px;
+
+    & > div {
+      width: 100%;
+      height: 100%;
+      background-color: var(--secondary-bg-color);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      overflow: hidden auto;
+
+      &.active {
+        @include DisplayFlex();
+        align-items: center;
+        justify-content: space-between;
+
+        &.none-item {
+          flex-wrap: nowrap;
+          justify-content: center;
+        }
+        & .day-number {
+          margin-right: 2px;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          padding: 3px;
+          background-color: var(--primary-color);
+          color: #fff;
+          font-size: 1rem;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          &:after{
+            content: "\002B";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            display: none;
+            right: 0;
+            top: 0;
+            padding: 3px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all .5s linear;
+          }
+          &:hover{
+            &:after{
+              background-color: var(--success-color);
+              border: 1px solid var(--success-color);
+              display: inline-block;
+              animation: addAssign .5s linear;
+            }
+          }
+        }
+        & .assignment-person{
+          width: calc(100% - 35px);
+          height: 100%;
+          padding: 5px;
+          overflow: hidden auto;
+          font-size: .8vw;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          & p{
+            width: 100%;
+            margin-bottom: 2px;
+            text-align: right;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 5px;
+            border-radius: var(--radius);
+            transition: all 0.3s linear;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            &:hover{
+              box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+              transform: translate(-3px, 3px);
+            }
+          }
+        }
+      }
+      &.disable {
+        pointer-events: none;
+        background-color: var(--border-color);
+      }
+      &.holiday {
+        @include DisplayFlex();
+        align-items: center;
+        justify-content: center;
+        & > p {
+          width: 30px;
+          height: 30px;
+          background-color: var(--error-color);
+          color: #fff;
+          transform-origin: 50% 50%;
+          padding: 3px;
+          border-radius: 50%;
+          font-size: 1rem;
+        }
+      }
+      &:hover {
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+        transform: translate(-5px, 5px);
+        z-index: 3;
+      }
+    }
+  }
+}
+
+div.assignment-modal-container{
+  @include DisplayFlex();
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  justify-content: space-between;
+  & .model-item{
+    width: 49%;
+  }
+}
+
+
+
+@keyframes addAssign{
+  0%{
+    display: none;
+    transform: rotate(0deg);
+  }
+  50%{
+    display: block;
+    transform: rotate(180deg);
+  }
+  100%{
+    display: block;
+    transform: rotate(360deg);
+  }
+}

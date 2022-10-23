@@ -1,0 +1,35 @@
+[
+  {
+    "title": "fullName",
+    "showTitle": "نام و نام خانوادگی",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "days",
+    "showTitle": "روزهای در دسترس",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "status",
+    "showTitle": "وضعیت",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  }
+]

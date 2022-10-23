@@ -1,0 +1,10 @@
+{
+  "AppName": "Hafez Software Group",
+  "Header": {
+    "Home":"HOME",
+    "Jobs": "JOBS",
+    "Article": "ARTICLES",
+    "AboutUs": "ABOUT US",
+    "Login" : "LOGIN"
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "title": "fullName",
+    "showTitle": "نام و نام خانوادگی",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "interviewee",
+    "showTitle": "مصاحبه شونده",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "date",
+    "showTitle": "تاریخ",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  },
+  {
+    "title": "time",
+    "showTitle": "زمان مصاحبه",
+    "type": "",
+    "filtering": false,
+    "sorting": false,
+    "sort": {
+      "show": false,
+      "desc": false
+    }
+  }
+]

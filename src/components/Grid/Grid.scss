@@ -1,0 +1,283 @@
+@import "../../css/variable.scss";
+
+@mixin Grid_Cell() {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 15px;
+  font-size: 13px;
+  color: var(--text-color);
+  text-align: center;
+  min-width: 10rem;
+}
+
+@mixin Thin() {
+  min-width: 70px;
+  max-width: 70px;
+  text-align: center;
+  padding: 0 0;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+.grid-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  & .a-grid-container {
+    width: 100%;
+    //height: 100%; Todo check :'(
+    overflow-x: auto;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+      height:5px
+    }
+    &.active-paging {
+      max-height: calc(100% - 40px);
+    }
+
+    & .a-grid-outer-filter {
+      @include DisplayFlex;
+      width: 100%;
+
+      & .grid-cell {
+        @include Grid_Cell;
+
+        &.thin {
+          @include Thin;
+        }
+
+        & button {
+          background: var(--primary-color);
+          outline: 0;
+          border: 1px solid var(--border-color);
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          transition: all 0.5s;
+        }
+      }
+
+      & .filter-area div button {
+        background: var(--primary-color);
+        outline: 0;
+        border-radius: 5px;
+        line-height: 5px;
+        margin: 5px;
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+      }
+    }
+
+    & .a-grid-columns {
+      @include DisplayFlex;
+      position: sticky;
+      top: 0;
+
+      & > div.grid-cell {
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+
+      & .grid-cell {
+        @include Grid_Cell();
+        @include DisplayFlex;
+        justify-content: center;
+        & .a-grid-columns-action {
+          display: flex;
+          align-items: center;
+        }
+
+        &.thin {
+          min-width: 70px;
+          max-width: 70px;
+          text-align: center;
+          padding: 0 0;
+        }
+
+        & button {
+          background: var(--text-color);
+          outline: 0;
+          border: 1px solid var(--border-color);
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          transition: all 0.5s;
+        }
+
+        & .grid-sort {
+          margin: 0 1rem;
+          font-size: 10px !important;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        & .inner-filter {
+          position: relative;
+
+          & .filter-triangle {
+            width: 0;
+            height: 0;
+            position: absolute;
+            overflow: hidden;
+            -webkit-transition: all .6s linear;
+            -o-transition: all .6s linear;
+            transition: all .6s linear;
+            transform: translate(-5px, 3px);
+            border-left: 11px solid transparent;
+            border-right: 11px solid transparent;
+            border-bottom: 11px solid var(--border-color);
+            z-index: 21;
+            visibility: hidden;
+            opacity: 0;
+
+            &.active {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
+          & .inner-filter-container {
+            visibility: hidden;
+            background:var(--bg-color);
+            align-items: center;
+            text-align: center;
+            position: absolute;
+            border-radius: 3px;
+            padding: 2px;
+            height: 0;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.75);
+            transform: translate(5%, 30%);
+            transition: all 0.5s linear;
+            -webkit-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            overflow: hidden;
+
+            &.active {
+              @include DisplayFlex;
+              visibility: visible;
+              height: 45px;
+            }
+
+            & input {
+              border: 1px solid var(--border-color);
+              border-radius: 0 3px 3px 0;
+              padding: 8px 30px;
+              height: 35px;
+              margin: 3px 3px 3px 0;
+              font-family: inherit;
+              -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+              font-size: 12px;
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            & button.submit-filter {
+              color: var(--text-color);
+              background: var(--bg-color);
+              border-radius: 3px 0 0 3px;
+              border: 1px solid #ddd;
+              height: 35px;
+              margin: 0 0 0 1px;
+              font-family: inherit;
+              box-sizing: border-box;
+              font-size: 12px;
+
+              &:hover {
+                color: var(--secondary-text-color);
+                background-color: var(--secondary-bg-color);
+                border: 1px solid transparent;
+              }
+            }
+          }
+        }
+      }
+      & .scroll-row{
+        width: 5px;
+      }
+    }
+
+    & .a-grid-rows{
+      width:100%;
+      height: 100%;
+
+      & .a-grid-row {
+        @include DisplayFlex;
+
+        & .grid-cell {
+          @include Grid_Cell;
+          padding: 3px 15px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          // white-space:nowrap;
+          &.thin {
+            @include Thin;
+          }
+
+          & .a-grid-actions {
+            @include DisplayFlex;
+            align-items: center;
+            justify-content : center;
+            text-align: center;
+            & button {
+              padding:5px;
+              font-size: 14px;
+              background-color:var(--text-color);
+              border: 1px solid transparent;
+              color: #fff;
+              border-radius:5px;
+              &:hover{
+                background-color:var(--second-text-color) !important;
+              }
+              & span{
+                //margin: 0 1px;
+              }
+            }
+          }
+          &.grid-cell-text{
+            justify-content:start !important;
+
+          }
+        }
+
+        &.odd-rows > div {
+          background: var(--bg-color);
+        }
+
+        &.even-rows > div {
+          background:var(--secondary-bg-color);
+        }
+
+        &.select-row > div {
+          /* color: #fff; */
+          background-color: var(--primary-color);
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}

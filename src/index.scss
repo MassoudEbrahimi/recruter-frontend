@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "IranSans" !important;
+  background-color: var(--white-color);
+  font-size: 12px;
+  //overflow-y: hidden;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--basic-color) var(--white-color);
+}
+button , a{
+  cursor: pointer;
+}
+a{
+  text-decoration:  none !important;
+}
+button{
+  font-family: inherit;
+  transition: all 0.5s linear;
+  outline: none;
+}
+canvas {
+  display: block;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+
+}
+
+

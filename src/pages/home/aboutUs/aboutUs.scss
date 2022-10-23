@@ -1,0 +1,93 @@
+@import "../../../css/variable";
+
+section.aboutUs-container {
+  width: 100%;
+  height: 50%;
+  //border-top: 1px solid var(--border-color);
+
+  & .aboutUs-wrapper {
+    @include DisplayFlex();
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    padding: 10px 15px;
+    margin: 0 auto;
+
+    & img {
+      width: 40%;
+      height: 100%;
+    }
+
+    & div.description {
+      width: 60%;
+      height: 80%;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      position: relative;
+      & > div{
+        padding: 10px 15px;
+      }
+      & h1 {
+        width: 80%;
+        padding: 5px 0;
+        margin: -15px auto 30px auto;
+        font-size: 1rem;
+        background-color: var(--primary-color);
+        color: #fff;
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        position: relative;
+        z-index: 2;
+
+        &::after {
+          z-index: -2;
+          right: -5px;
+          top: -5px;
+          opacity: 0.6;
+        }
+
+        &::before {
+          z-index: -1;
+          right: -8px;
+          top: -8px;
+          opacity: 0.4;
+        }
+
+        &::after,
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: var(--primary-color);
+          border-radius: 3px;
+          transition: all 0.5s linear;
+        }
+      }
+      & p {
+
+      }
+      & svg{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        border-radius: 0 0 10px 10px;
+        & path{
+          fill: var(--primary-color);
+        }
+      }
+      &:hover {
+        & h1 {
+          &::after,
+          &::before {
+            right: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

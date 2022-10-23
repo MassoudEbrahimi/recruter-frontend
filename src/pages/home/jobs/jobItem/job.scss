@@ -1,0 +1,132 @@
+@import "../../../../css/variable";
+
+
+.job-container {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  & .job-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 40px 10px;
+    margin-bottom: 20px;
+    background: var(--primary-color);
+    //border-radius: 10px;
+    text-align: center;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgb(0 24 128 / 10%);
+    &:hover {
+      background-color: var(--primary-color);
+      transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%);
+      & .job-status{
+        button{
+          bottom: -70px;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      & .title {
+        color: #fff;
+      }
+      &::after {
+        height: 0;
+      }
+    }
+    &::after {
+      background-image: url("../../../../assets/categories-bg-light.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      content: "";
+      width: 100%;
+      height: 110px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      -moz-transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    & .icon-content {
+      position: relative;
+      z-index: 1;
+    }
+    & .job-status{
+      @include DisplayFlex();
+      flex-wrap: wrap;
+      text-align: right;
+      & > p {
+        display: inline-block;
+        text-align: right;
+        padding: 6px 10px;
+        margin-left: 3px;
+        font-size: 12px;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        border-radius: var(--radius);
+      }
+      & button{
+        font-size: 22px;
+        color : var(--bg-color);
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        bottom: -100px;
+        right: 45%;
+        transition: all 0.5s linear;
+        &:hover{
+          opacity: .7;
+          filter:drop-shadow(2px 2px 5px var(--text-color));
+        }
+      }
+
+    }
+    & .title {
+      display: inline-block;
+      color: var(--text-color);
+      margin-bottom: 40px;
+    }
+  }
+}
+
+body[data-theme="dark"] {
+  & .job-wrapper {
+
+    &::after {
+      background-image: url("../../../../assets/categories-bg-dark.png");
+    }
+
+    .title {
+      color: #fff;
+    }
+
+    &:hover {
+      color: #fff;
+      & .job-status{
+        & a{
+          color:#fff;
+        }
+      }
+
+    }
+  }
+}

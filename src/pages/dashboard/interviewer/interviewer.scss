@@ -1,0 +1,10 @@
+@import "../../../css/variable.scss";
+.interviewer-container {
+  @include DisplayFlex();
+  width: 90%;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

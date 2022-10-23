@@ -1,0 +1,34 @@
+@import "../../../../css/variable";
+.user-management-container{
+  width: 100%;
+  height: 100%;
+  & .create-user{
+    @include DisplayFlex();
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+    & > button{
+      @include Button();
+      padding: 8px 20px;
+    }
+  }
+  & .bottom-grid{
+    width: 100%;
+    height: calc(100% - 80px);
+  }
+}
+.modal-form-containers{
+  @include DisplayFlex();
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 15px;
+  & .model-item{
+    width: 48%;
+  }
+  & .r-input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}

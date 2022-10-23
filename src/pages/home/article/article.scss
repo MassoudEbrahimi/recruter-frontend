@@ -1,0 +1,31 @@
+@import "../../../css/variable";
+
+.articles-container {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  //border-top: 1px solid var(--border-color);
+
+  & article.article-list {
+    @include DisplayFlex();
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    & .articles-swiper{
+      @include DisplayFlex();
+      align-items: center;
+      width: 80%;
+      height: 350px;
+      & .swiper-wrapper{
+        width: 100%;
+        height: 80%;
+        & .swiper-slide{
+          height: 100%;
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}

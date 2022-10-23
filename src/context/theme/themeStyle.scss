@@ -1,0 +1,78 @@
+.theme-layout{
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 42px;
+  line-height: 40px;
+  width: 80px;
+  background-color: var(--primary-color);
+  padding: 4px!important;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  vertical-align: middle;
+  & input {
+    z-index: 9;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    &:checked+span{
+      right: 4px;
+      color: var(--primary-color);
+    }
+  }
+  & span{
+    content: "";
+    width: calc(50% - 4px);
+    display: block;
+    height: 34px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    right: 50%;
+    top: 4px;
+    z-index: -1;
+    transition: all 1s;
+  }
+  &::before{
+    content: "\f185";
+    left: 2px;
+    color: var(--primary-color);
+  }
+  &::after{
+    content: "\f186";
+    right: 2px;
+    color: #fff;
+  }
+  &::before,
+  &::after{
+    font-family: 'Font Awesome 6 Free';
+    font-size: 18px;
+    font-weight: 500;
+    width: 50%;
+    text-align: center;
+    transition: all 1s;
+    height: 42px;
+    line-height: 42px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.active{
+    &::after{
+      color: var(--primary-color);
+    }
+    &::before{
+      color:#fff;
+    }
+  }
+
+}
